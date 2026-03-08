@@ -9,6 +9,7 @@ namespace LeetCode.Linked_List
 {
     public class MergeTwoSortedLists_Problem_21
     {
+        //practice some linked list qs
         //public ListNode MergeTwoLists(ListNode list1, ListNode list2)
         //{
 
