@@ -15,5 +15,7 @@ namespace LeetCode.Linked_List
             this.val = val;
             this.next = next;
         }
+
+        
     }
 }
