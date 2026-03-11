@@ -10,7 +10,8 @@ class Program
 
         var solution = new BasicLinkedListOperations();
         ListNode n4 = new ListNode(4); ListNode n3 = new ListNode(3, n4); ListNode n2 = new ListNode(2, n3); ListNode n1 = new ListNode(1, n2);
-        solution.Traverse(n1);
+        solution.AddAtLast(n1,5);
+        //solution.Traverse(n1);
 
         //Console.WriteLine("the result is",string.Join(",", result));
         //Console.WriteLine("the result is {0}", result);
