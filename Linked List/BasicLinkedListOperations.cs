@@ -31,6 +31,22 @@ namespace LeetCode.Linked_List
             Console.WriteLine("the result is {0}", current.val);
         }
 
+        public void AddAfter(ListNode head, int valueToAdd, int addAfter)
+        {
+            var current = head;
+            while (current.next != null)
+            {
+                if (current.val == addAfter)
+                {
+                    ListNode next = current.next;
+                    current.next = new ListNode(valueToAdd, next);
+                    break;
+                }
+                current = current.next;
+            }
+
+        }
+
         public void DeleteAtLast(ListNode head)
         {
             var current = head;
