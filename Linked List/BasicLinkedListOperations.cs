@@ -21,12 +21,25 @@ namespace LeetCode.Linked_List
         public void AddAtLast(ListNode head, int valueToAdd)
         {
             var current = head;
-            while (current != null)
+            while (current.next != null)
             {
                 Console.WriteLine("the result is {0}", current.val);
                 current = current.next;
             }
-            current = new ListNode(valueToAdd);
+            ListNode newNode = new ListNode(valueToAdd);
+            current.next = newNode;
+            Console.WriteLine("the result is {0}", current.val);
+        }
+
+        public void DeleteAtLast(ListNode head)
+        {
+            var current = head;
+            while (current.next.next != null)
+            {
+                Console.WriteLine("the result is {0}", current.val);
+                current = current.next;
+            }
+            current.next = null;
             Console.WriteLine("the result is {0}", current.val);
         }
     }
