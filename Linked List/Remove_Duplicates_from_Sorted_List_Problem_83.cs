@@ -19,10 +19,15 @@ namespace LeetCode.Linked_List
                 if (visited.Contains(current.next.val))
                 {
 
-                    while (visited.Contains(current.next.next.val))
+                    while (visited.Contains(current.next.val))
                     //while (current.next.next != null && !visited.Contains(current.next.next.val))
                     {
-                        current.next = current.next.next;
+                        if (!visited.Contains(current.next.val))
+                        {
+                            current = current.next;
+                            Console.WriteLine("the result is {0}", current.val);
+                        }
+                        //current.next = current.next.next;
                     }
                     //if (visited.Contains(current.next.val))
                     //{
