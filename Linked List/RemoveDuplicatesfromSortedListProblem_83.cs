@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LeetCode.Linked_List
 {
-    public class Remove_Duplicates_from_Sorted_List_Problem_83
+    public class RemoveDuplicatesfromSortedListProblem_83
     {
         public ListNode DeleteDuplicates(ListNode head)
         {
