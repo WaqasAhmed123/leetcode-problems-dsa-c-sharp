@@ -11,30 +11,25 @@ namespace LeetCode.Linked_List
     {
         public ListNode RemoveElements(ListNode head, int val)
         {
-            ListNode current = head;
-            if (current == null)
-                return head;
-            else if (current.val == val)
+
+            ListNode dummy  = new ListNode(0);
+            dummy.next = head;
+            
+            ListNode current = dummy;
+            
+            while(current.next != null)
             {
-                head = current.next;
-                current = head;
-            }
-            else
-            {
-                while (current.next != null)
+                if (current.next.val == val)
                 {
-                    if (current.next.val == val && current.next.next.val != null && current.next.next.val != val )
-                    {
-                        current.next = current.next.next;
-                    }
-                    else
-                    {
-                        current = current.next;
-                    }
+                    current.next = current.next.next;
+                }
+                else
+                {
+                    current = current.next;
                 }
             }
-            return head;
+            return dummy.next;
         }
-    
+
     }
 }
