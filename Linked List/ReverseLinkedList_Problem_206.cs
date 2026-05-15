@@ -17,20 +17,26 @@ namespace LeetCode.Linked_List
             }
 
             ListNode current = head;
-            ListNode updated_head = new ListNode(current.next.val);
+            ListNode? next = null;
+            ListNode? prev = null;
+            ListNode? untouchedNext = null;
+            bool isFirst = false;
             while (current.next != null)
             {
-                updated_head.next = new ListNode(current.val);
-                updated_head = updated_head.next;
-                //updated_head.next = current.;
-                //head = current.next;
-                //updated_head.next = current;
-                //head.next = current;
-                current = current.next;
+                prev = current; // 1
+                next = current.next; // 2
+                next.next = prev;
+                current = current.next; // 2
+                //current.next = prev; //1
 
+                if (!isFirst)
+                {
+                    prev.next = null;
+                    isFirst = true;
+                }
             }
 
-            return updated_head;
+            return current;
         }
     }
 }
