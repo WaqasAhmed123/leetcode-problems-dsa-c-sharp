@@ -11,32 +11,38 @@ namespace LeetCode.Linked_List
     {
         public ListNode ReverseList(ListNode head)
         {
-            if (head == null || head.next == null)
-            {
-                return head;
-            }
-
+            ListNode prev = null;
             ListNode current = head;
-            ListNode? next = null;
-            ListNode? prev = null;
-            ListNode? untouchedNext = null;
-            bool isFirst = false;
-            while (current.next != null)
+            while (current != null)
             {
-                prev = current; // 1
-                next = current.next; // 2
-                next.next = prev;
-                current = current.next; // 2
-                //current.next = prev; //1
-
-                if (!isFirst)
-                {
-                    prev.next = null;
-                    isFirst = true;
-                }
+                ListNode nextTemp = current.next;
+                current.next = prev;
+                prev = current;
+                current = nextTemp;
             }
 
-            return current;
+            return prev;
+
+            //second solution, not as efficient as the first one, but it works
+
+            //if (head == null || head.next == null)
+            //{
+            //    return head;
+            //}
+
+            //ListNode current = head;
+            //ListNode? reversedHead = new ListNode(current.val, null);
+            //ListNode? prev = null;
+            //while (current.next != null)
+            //{
+            //    prev = new ListNode(reversedHead.val, reversedHead.next);
+            //    reversedHead = new ListNode(current.val, prev);
+            //    current = current.next;
+
+            //}
+            //reversedHead = new ListNode(current.val, reversedHead);
+
+            //return reversedHead;
         }
     }
 }
